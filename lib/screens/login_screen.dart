@@ -22,7 +22,10 @@ Widget build(BuildContext context) {
           child: Image.asset('assets/fondo-dentista.jpg', fit: BoxFit.cover),
         ),
         Center( //En el centro del body
-          child:SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // Centra los hijos de la columna verticalmente
+          crossAxisAlignment: CrossAxisAlignment.center, // Centra los hijos de la columna horizontalmente
+          children:[SizedBox(
             width: 350,
             child: Card(
               margin: EdgeInsets.all(24),
@@ -137,37 +140,24 @@ Widget build(BuildContext context) {
               ),
             ),
           ),
-        ),
-        Positioned(
-          bottom: 115,
-          left: 0,
-          right: 0,
-          child: Center(
-            child: Text(
-              "¿Olvidaste tu contraseña? Click aqui",
+          SizedBox(height: 0),
+          Text(
+            "¿Olvidaste tu contraseña? Click aqui",
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: Colors.black
               ),
-            )
           ),
-        ),
-        Positioned(
-          bottom: 102,
-          left: 0,
-          right: 0,
-          child: Center(
-            child: Text(
-              "Powered by BCSS",
-              style: TextStyle(
-                fontSize: 11,
+          Text(
+            "Powered by BCSS",
+            style: TextStyle(
+                fontSize: 12,
                 color: Colors.black
               ),
-            ),
-          ),
-        )
-      ],
+          )
+      ]),
+    )],
     )
   );
 }
